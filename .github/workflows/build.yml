@@ -1,0 +1,15 @@
+# This workflow runs the tests of the projects modified in an open pull request .
+name: Deploy to ECS env
+
+on:
+  push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - run: yarn install
+      - run: yarn build
+
