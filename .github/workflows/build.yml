@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - run: corepack enable
       - run: yarn install
+      - run: yarn why -R graphql
+      - run: yarn info -R graphql
       - run: yarn build
 
